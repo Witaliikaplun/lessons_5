@@ -13,12 +13,12 @@ public class Main {
         MyInterface interf = new MyInterface() {
             @Override
             public void method1(float[] arr, int size) {
-                System.out.println("Время начала метода 1-\t\t" + System.currentTimeMillis());
+                System.out.println("Время начала метода 1 -\t\t" + System.currentTimeMillis());
                 for (int i = 0; i < size; i++) {
                     arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) *
                             Math.cos(0.4f + i / 2));
                 }
-                System.out.println("Время окончания метода 1-\t" + System.currentTimeMillis());
+                System.out.println("Время окончания метода 1 -\t" + System.currentTimeMillis());
             }
         };
         interf.method1(arr, SIZE);
@@ -29,7 +29,7 @@ public class Main {
             @Override
             public void run() {
                 System.arraycopy(arr, 0, arr2, 0, HALF);
-                System.out.println("Время начала 2-\t\t" + System.currentTimeMillis());
+                System.out.println("Время начала 2 -\t\t" + System.currentTimeMillis());
 
                 for (int i = 0; i < HALF; i++) {
                     arr2[i] = (float) (arr2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) *
@@ -44,7 +44,7 @@ public class Main {
             @Override
             public void run() {
                 System.arraycopy(arr, HALF, arr3, 0, HALF);
-                System.out.println("Время начала 3-\t\t" + System.currentTimeMillis());
+                System.out.println("Время начала 3 -\t\t" + System.currentTimeMillis());
 
                 for (int i = 0; i < HALF; i++) {
                     arr3[i] = (float) (arr3[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) *
@@ -62,13 +62,13 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Время окончания 2-\t" + System.currentTimeMillis());
+        System.out.println("Время окончания 2 -\t" + System.currentTimeMillis());
         try {
             t2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Время окончания 3-\t" + System.currentTimeMillis());
+        System.out.println("Время окончания 3 -\t" + System.currentTimeMillis());
 
 
     }
